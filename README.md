@@ -4,6 +4,8 @@ This example shows how simple it is to draw a (TMX) map made with [Tiled](http:/
 
 Used the `MonoGame Cross-Platform Desktop Application (OpenGL)` template.
 
+**Note:** Because someone wanted to learn, I have updated this example to work with the newest (3.8) MonoGame version and the new TiledCS that succeeded TiledSharp.
+
 
 ## Notes:
 The TMX and TSX map files is **not** supposed to be build with content pipeline. Just add it to the project and set **Copy if newer** from the files properties.
