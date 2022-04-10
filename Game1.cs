@@ -55,6 +55,9 @@ namespace TiledCS_MonoGame_Example
             // Amount of tiels on each column (up down)
             _tilesetTilesHeight = _tileset.TileCount / _tileset.Columns;
 
+            // Print "Sun" to the debug console. This is an object in "Object Layer 1".
+            System.Diagnostics.Debug.WriteLine(_map.Layers[1].objects[0].name);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -85,7 +88,14 @@ namespace TiledCS_MonoGame_Example
                 }
                 else
                 {
+                    // Tileset tile ID
+                    // Looking at the exampleTileset.png
+                    // 0 = Blue
+                    // 1 = Green
+                    // 2 = Dark Yellow
+                    // 3 = Magenta
                     int tileFrame = gid - 1;
+                 
                     int column = tileFrame % _tilesetTilesWide;
                     int row = (int)Math.Floor((double)tileFrame / (double)_tilesetTilesWide);
 
