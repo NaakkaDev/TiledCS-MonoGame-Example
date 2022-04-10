@@ -95,6 +95,15 @@ namespace TiledCS_MonoGame_Example
                     // 2 = Dark Yellow
                     // 3 = Magenta
                     int tileFrame = gid - 1;
+
+                    // Print the tile type into the debug console.
+                    // This assumes only one (1) `tiled tileset` is being used, so getting the first one.
+                    var tile = _map.GetTiledTile(_map.Tilesets[0], _tileset, gid);
+                    if (tile != null) {
+                        // This should print "Grass" for each grass tile in the map each draw call
+                        // so six (6) times.
+                        System.Diagnostics.Debug.WriteLine(tile.type);
+                    }
                  
                     int column = tileFrame % _tilesetTilesWide;
                     int row = (int)Math.Floor((double)tileFrame / (double)_tilesetTilesWide);
@@ -111,6 +120,9 @@ namespace TiledCS_MonoGame_Example
             _spriteBatch.End();
 
             base.Draw(gameTime);
+
+            // Separate draw calls in the debug console
+            System.Diagnostics.Debug.WriteLine("------------------------");
         }
     }
 }
